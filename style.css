@@ -1,0 +1,39 @@
+.container {
+  display: grid;
+  grid-template-areas:
+    "sidebar nav"
+    "sidebar main";
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+nav {
+  grid-area: nav;
+}
+
+main {
+  grid-area: main;
+}
+
+@media only screen and (max-width: 992px) {
+  .container {
+    grid-template-areas:
+      "nav"
+      "sidebar"
+      "main";
+  }
+
+  .sidebar {
+    grid-area: nav;
+  }
+
+  nav {
+    grid-area: sidebar;
+  }
+
+  main {
+    grid-area: main;
+  }
+}
