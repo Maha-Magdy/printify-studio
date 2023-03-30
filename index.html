@@ -15,11 +15,13 @@
         <nav>nav</nav>
         <main>
             <div class="photo-container">
-                <input type="file" accept="image/*" class="choose-photo-file-input">
+                <input type="file" accept="image/*" class="choose-photo-file-input"
+                    onchange="fileInputOnchangeHandler()">
                 <div>
                     <button class="choose-photo" onclick="choosePhotoBtnHandler()">Choose Photo</button>
                     <p>or drop photo here</p>
                 </div>
+                <img src="" alt="chosen photo" class="chosenPhoto">
             </div>
         </main>
     </div>
