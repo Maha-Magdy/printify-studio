@@ -14,6 +14,7 @@ body {
   grid-template-areas:
     "sidebar nav"
     "sidebar main";
+  overflow: hidden;
 }
 
 .sidebar {
@@ -56,6 +57,13 @@ main {
 .photo-container p {
   text-align: center;
   color: #00383d;
+}
+
+.chosenPhoto {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 992px) {
