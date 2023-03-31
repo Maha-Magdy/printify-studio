@@ -12,13 +12,15 @@
 <body>
     <div class="container">
         <div class="sidebar">sidebar</div>
-        <nav>nav</nav>
+        <nav>
+            <button class="clear-btn" onclick="reset()">Clear</button>
+        </nav>
         <main>
             <div class="photo-container">
                 <input type="file" accept="image/*" class="choose-photo-file-input"
                     onchange="fileInputOnchangeHandler()">
-                <div>
-                    <button class="choose-photo" onclick="choosePhotoBtnHandler()">Choose Photo</button>
+                <div class="choose-photo-container">
+                    <button class="choose-photo-btn" onclick="choosePhotoBtnHandler()">Choose Photo</button>
                     <p>or drop photo here</p>
                 </div>
                 <img src="" alt="chosen photo" class="chosenPhoto">
