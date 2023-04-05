@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap");
 :root {
-  --photo-container-bg-color: transparent;
+  --photo-bg-color: transparent;
 }
 
 body {
@@ -44,7 +44,7 @@ main {
   align-items: center;
   position: relative;
   overflow: hidden;
-  background-color: var(--photo-container-bg-color);
+  background-color: var(--photo-bg-color);
 }
 
 .photo-container input {
