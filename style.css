@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap");
+:root {
+  --photo-container-bg-color: transparent;
+}
 
 body {
   margin: 0;
@@ -39,6 +42,9 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--photo-container-bg-color);
 }
 
 .photo-container input {
