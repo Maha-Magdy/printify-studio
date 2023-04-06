@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap");
 :root {
   --photo-bg-color: transparent;
+  --photo-border-color: transparent;
+  --photo-border-line-width: 1px;
 }
 
 body {
@@ -66,10 +68,9 @@ main {
 }
 
 .chosenPhoto {
-  width: 75%;
   height: 75%;
-  object-fit: contain;
   overflow: hidden;
+  border: var(--photo-border-line-width) solid var(--photo-border-color);
 }
 
 @media only screen and (max-width: 992px) {
