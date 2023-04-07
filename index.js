@@ -14,6 +14,8 @@ const reset = () => {
   choosePhotoFileInput.value = null;
   choosePhotoContainer.style.display = "block";
   document.documentElement.style.setProperty("--photo-bg-color", "transparent");
+  document.documentElement.style.setProperty("--photo-border-color", "#000000");
+  document.documentElement.style.setProperty("--photo-border-line-width", "0");
 };
 
 const choosePhotoBtnHandler = () => {
@@ -37,7 +39,9 @@ function handleUpdate() {
   const suffix = this.dataset.sizing || "";
   document.documentElement.style.setProperty(
     `--${this.name}`,
-    this.value + suffix
+    this.dataset.filter
+      ? `${this.dataset.filter}(${this.value + suffix})`
+      : this.value + suffix
   );
   //   console.log(this.value + suffix);
   //   console.log(this.name);
