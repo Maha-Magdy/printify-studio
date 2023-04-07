@@ -13,19 +13,86 @@
     <div class="container">
         <div class="sidebar">
             <div>
+                <p>Photo size</p>
+                <input type="range" name="photo-max-hight" class="controls" value="100" min='1' max='100'
+                    data-sizing="%">
+            </div>
+
+            <div>
                 <p>Photo background color</p>
-                <input type="color" name="photo-bg-color" class="controls" value="#edf6f9">
+                <input type="color" name="photo-bg-color" class="controls" value="#000000">
             </div>
 
             <div>
                 <p>Photo border color</p>
-                <input type="color" name="photo-border-color" class="controls" value="#edf6f9">
+                <input type="color" name="photo-border-color" class="controls" value="#000000">
             </div>
 
             <div>
                 <p>Photo border width</p>
-                <input type="range" name="photo-border-line-width" min="1" max="50" class="controls" value="1"
+                <input type="range" name="photo-border-line-width" min="0" max="50" class="controls" value="0"
                     data-sizing="px">
+            </div>
+
+            <div>
+                <p>Blur</p>
+                <input type="range" name="photo-filter-blur" min="0" max="25" class="controls" value="0"
+                    data-sizing="px" data-filter="blur">
+            </div>
+
+            <div>
+                <p>Contrast</p>
+                <input type="range" name="photo-filter-contrast" min="50" max="200" class="controls" value="100"
+                    data-sizing="%" data-filter="contrast">
+            </div>
+
+            <div>
+                <p>Grayscale</p>
+                <input type="range" name="photo-filter-grayscale" min="0" max="100" class="controls" value="0"
+                    data-sizing="%" data-filter="grayscale">
+            </div>
+
+            <div>
+                <p>Hue</p>
+                <input type="range" name="photo-filter-hue-rotate" min="0" max="360" class="controls" value="0"
+                    data-sizing="deg" data-filter="hue-rotate">
+            </div>
+
+            <div>
+                <p>Drop shadow</p>
+                <input type="range" name="photo-filter-drop-shadow-offset-x" min="0" max="25" class="controls" value="0"
+                    data-sizing="px">
+
+                <input type="range" name="photo-filter-drop-shadow-offset-y" min="0" max="25" class="controls" value="0"
+                    data-sizing="px">
+
+                <input type="range" name="photo-filter-drop-shadow-blur-radius" min="0" max="25" class="controls"
+                    value="0" data-sizing="px">
+                <input type="color" name="photo-filter-drop-shadow-color" class="controls" value="#000000">
+            </div>
+
+            <div>
+                <p>Invert</p>
+                <input type="range" name="photo-filter-invert" min="0" max="100" class="controls" value="0"
+                    data-sizing="%" data-filter="invert">
+            </div>
+
+            <div>
+                <p>Opacity</p>
+                <input type="range" name="photo-filter-opacity" min="0" max="100" class="controls" value="100"
+                    data-sizing="%" data-filter="opacity">
+            </div>
+
+            <div>
+                <p>Saturate</p>
+                <input type="range" name="photo-filter-saturate" min="50" max="200" class="controls" value="100"
+                    data-sizing="%" data-filter="saturate">
+            </div>
+
+            <div>
+                <p>Temperature</p>
+                <input type="range" name="photo-filter-sepia" min="-100" max="100" class="controls" value="0"
+                    data-sizing="%" data-filter="sepia">
             </div>
         </div>
         <nav>
