@@ -3,7 +3,7 @@
   --photo-bg-color: transparent;
   --photo-border-color: transparent;
   --photo-border-line-width: 0;
-  --photo-max-hight: 100%;
+  --photo-max-hight: 80%;
   --photo-filter-blur: blur(0);
   --photo-filter-contrast: contrast(100%);
   --photo-filter-grayscale: grayscale(0);
@@ -11,7 +11,7 @@
   --photo-filter-drop-shadow-offset-x: 0;
   --photo-filter-drop-shadow-offset-y: 0;
   --photo-filter-drop-shadow-blur-radius: 0;
-  --photo-filter-drop-shadow-color: transparent;
+  --photo-filter-drop-shadow-color: black;
   --photo-filter-invert: invert(0);
   --photo-filter-opacity: opacity(100%);
   --photo-filter-saturate: saturate(100%);
@@ -32,7 +32,7 @@ body {
   grid-template-areas:
     "sidebar nav"
     "sidebar main";
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .sidebar {
@@ -47,9 +47,10 @@ main {
   grid-area: main;
   background-color: #edf6f9;
   padding: 1.5em;
+  position: relative;
 }
 
-.photo-container {
+.main-container {
   width: 100%;
   height: calc(100% - 4em);
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='3' ry='3' stroke='%2342999BFF' stroke-width='3' stroke-dasharray='17 13' stroke-dashoffset='37' stroke-linecap='square'/%3e%3c/svg%3e");
@@ -63,11 +64,11 @@ main {
   padding: 2em 0;
 }
 
-.photo-container input {
+.main-container input {
   display: none;
 }
 
-.photo-container button {
+.main-container button {
   background-color: #42999b;
   color: white;
   border: unset;
@@ -76,11 +77,14 @@ main {
   cursor: pointer;
 }
 
-.photo-container p {
+.main-container p {
   text-align: center;
   color: #00383d;
 }
 
+.main-container .text {
+  position: absolute;
+}
 .chosenPhoto {
   max-height: var(--photo-max-hight);
   max-width: 100%;
