@@ -68,38 +68,174 @@ const textInputChangeHandler = (e) => {
 
 const removeTextHandler = (textName) => {
   document.querySelector(`.text-${textName}-controls`).remove();
-  document.querySelector(`.${textName}`).remove();
+  document.querySelector(`.text-${textName}`).remove();
+};
+
+const createHtmlElement = (tagName, attributes = {}) => {
+  const element = document.createElement(tagName);
+  setAttributes(element, attributes);
+  return element;
+};
+
+const handleTextUpdate = (event, textName) => {
+  document.querySelector(`.text-${textName}`).style[event.target.name] = `${
+    event.target.value
+  }${event.target.dataset.sizing || ""}`;
+};
+
+// () => {
+//   const container = document.createElement("div");
+//   const label = document.createElement("label");
+//   label.append(document.createTextNode("Font Weight"));
+//   const select = createHtmlElement("select", { name: "font-weight" });
+//   const options = ["normal", "bold"];
+//   options.forEach((option) => {
+//     const optionNode = createHtmlElement("option", { value: option });
+//     optionNode.append(
+//       document.createTextNode(option.charAt(0).toUpperCase() + option.slice(1))
+//     );
+//     select.append(optionNode);
+//   });
+//   select.addEventListener("change", (event) => {
+//     handleTextUpdate(event, textControlName);
+//   });
+//   container.append(label, select);
+//   return container;
+// };
+
+const textEditingControl = (
+  { label, type, attributes, options },
+  parentName
+) => {
+  const container = createHtmlElement("div");
+  const labelElement = createHtmlElement("label");
+  labelElement.append(document.createTextNode(label));
+  const control = createHtmlElement(type, attributes);
+  if (options) {
+    options.forEach((option) => {
+      const optionNode = createHtmlElement("option", { value: option });
+      optionNode.append(
+        document.createTextNode(
+          option.charAt(0).toUpperCase() + option.slice(1)
+        )
+      );
+      control.append(optionNode);
+    });
+  }
+  control.addEventListener("change", (event) =>
+    handleTextUpdate(event, parentName)
+  );
+  container.append(labelElement, control);
+  return container;
 };
 
 const createTextControl = () => {
+  const textControlName = Math.floor(Math.random() * 100);
   const container = document.createElement("div");
 
   const textInputAndRemoveBtnContainer = document.createElement("div");
 
-  const textInput = document.createElement("input");
-  setAttributes(textInput, {
+  const textInput = createHtmlElement("input", {
     type: "text",
     class: "textInput",
-    name: `text-${Math.floor(Math.random() * 100)}`,
+    name: `text-${textControlName}`,
     value: "",
     placeholder: "Add text",
   });
   textInput.addEventListener("change", textInputChangeHandler);
 
-  const textEle = document.createElement("p");
-  setAttributes(textEle, { class: `text ${textInput.name}` });
+  const textEle = createHtmlElement("p", {
+    class: `text text-${textControlName}`,
+  });
 
-  setAttributes(container, { class: `text-${textInput.name}-controls` });
+  setAttributes(container, { class: `text-${textControlName}-controls` });
 
   const removeBtn = document.createElement("button");
   removeBtn.appendChild(document.createTextNode("Remove"));
   setAttributes(removeBtn, { type: "button", class: "removeBtn" });
-  removeBtn.addEventListener("click", () => removeTextHandler(textInput.name));
+  removeBtn.addEventListener("click", () => removeTextHandler(textControlName));
 
   textInputAndRemoveBtnContainer.append(textInput, removeBtn);
 
+  const x = textEditingControl(
+    {
+      label: "X",
+      type: "input",
+      attributes: {
+        type: "number",
+        name: "left",
+        min: "0",
+        max: `${mainContainer.clientWidth}`,
+        value: "0",
+        ["data-sizing"]: "px",
+      },
+    },
+    textControlName
+  );
+
+  const y = textEditingControl(
+    {
+      label: "Y",
+      type: "input",
+      attributes: {
+        type: "number",
+        name: "top",
+        min: "0",
+        max: `${mainContainer.clientHeight}`,
+        value: "0",
+        ["data-sizing"]: "px",
+      },
+    },
+    textControlName
+  );
+
+  const color = textEditingControl(
+    {
+      label: "Font Color",
+      type: "input",
+      attributes: {
+        type: "color",
+        name: "color",
+        value: "#000000",
+      },
+    },
+    textControlName
+  );
+
+  const fontSize = textEditingControl(
+    {
+      label: "Font Size",
+      type: "input",
+      attributes: {
+        type: "number",
+        name: "font-size",
+        min: "0",
+        value: "16",
+        ["data-sizing"]: "px",
+      },
+    },
+    textControlName
+  );
+
+  const fontWeight = textEditingControl(
+    {
+      label: "Font Weight",
+      type: "select",
+      attributes: { name: "font-weight" },
+      options: ["normal", "bold"],
+    },
+    textControlName
+  );
+
   mainContainer.append(textEle);
-  container.append(textInputAndRemoveBtnContainer);
+  container.append(
+    textInputAndRemoveBtnContainer,
+    x,
+    y,
+    color,
+    fontSize,
+    fontWeight
+  );
   return container;
 };
 
