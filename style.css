@@ -84,6 +84,10 @@ main {
 
 .main-container .text {
   position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+  font-weight: normal;
 }
 .chosenPhoto {
   max-height: var(--photo-max-hight);
