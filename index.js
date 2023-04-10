@@ -46,8 +46,6 @@ function handleUpdate() {
       ? `${this.dataset.filter}(${this.value + suffix})`
       : this.value + suffix
   );
-  //   console.log(this.value + suffix);
-  //   console.log(this.name);
 }
 
 controls.forEach((input) => input.addEventListener("change", handleUpdate));
@@ -82,26 +80,6 @@ const handleTextUpdate = (event, textName) => {
     event.target.value
   }${event.target.dataset.sizing || ""}`;
 };
-
-// () => {
-//   const container = document.createElement("div");
-//   const label = document.createElement("label");
-//   label.append(document.createTextNode("Font Weight"));
-//   const select = createHtmlElement("select", { name: "font-weight" });
-//   const options = ["normal", "bold"];
-//   options.forEach((option) => {
-//     const optionNode = createHtmlElement("option", { value: option });
-//     optionNode.append(
-//       document.createTextNode(option.charAt(0).toUpperCase() + option.slice(1))
-//     );
-//     select.append(optionNode);
-//   });
-//   select.addEventListener("change", (event) => {
-//     handleTextUpdate(event, textControlName);
-//   });
-//   container.append(label, select);
-//   return container;
-// };
 
 const textEditingControl = (
   { label, type, attributes, options },
@@ -162,7 +140,7 @@ const createTextControl = () => {
       label: "X",
       type: "input",
       attributes: {
-        type: "number",
+        type: "range",
         name: "left",
         min: "0",
         max: `${mainContainer.clientWidth}`,
@@ -178,7 +156,7 @@ const createTextControl = () => {
       label: "Y",
       type: "input",
       attributes: {
-        type: "number",
+        type: "range",
         name: "top",
         min: "0",
         max: `${mainContainer.clientHeight}`,
@@ -217,12 +195,32 @@ const createTextControl = () => {
     textControlName
   );
 
+  const fontFamily = textEditingControl(
+    {
+      label: "Font Family",
+      type: "select",
+      attributes: { name: "font-family" },
+      options: ["sans-serif", "serif", "cursive", "fantasy"],
+    },
+    textControlName
+  );
+
   const fontWeight = textEditingControl(
     {
       label: "Font Weight",
       type: "select",
       attributes: { name: "font-weight" },
       options: ["normal", "bold"],
+    },
+    textControlName
+  );
+
+  const fontStyle = textEditingControl(
+    {
+      label: "Font Style",
+      type: "select",
+      attributes: { name: "font-style" },
+      options: ["normal", "italic"],
     },
     textControlName
   );
@@ -234,7 +232,9 @@ const createTextControl = () => {
     y,
     color,
     fontSize,
-    fontWeight
+    fontFamily,
+    fontWeight,
+    fontStyle
   );
   return container;
 };
