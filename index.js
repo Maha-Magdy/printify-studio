@@ -6,9 +6,7 @@ const choosePhotoContainer = document.querySelector(".choose-photo-container");
 const main = document.querySelector("main");
 const nav = document.querySelector("nav");
 const controls = document.querySelectorAll(".controls");
-const textControlsContainer = document.querySelector(
-  ".text-controls-container"
-);
+const textControlsContainer = document.querySelector(".add-text");
 
 main.style.height = `calc(100vh - ${nav.clientHeight}px - 3em)`;
 

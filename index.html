@@ -12,29 +12,31 @@
 <body>
     <div class="container">
         <div class="sidebar">
-            <div>
-                <p>Photo size</p>
-                <input type="range" name="photo-max-hight" class="controls" value="80" min='1' max='100'
-                    data-sizing="%">
+            <div class="layout-options">
+                <div>
+                    <p>Photo size</p>
+                    <input type="range" name="photo-max-hight" class="controls" value="80" min='1' max='100'
+                        data-sizing="%">
+                </div>
+
+                <div>
+                    <p>Photo background color</p>
+                    <input type="color" name="photo-bg-color" class="controls" value="#ffffff">
+                </div>
+
+                <div>
+                    <p>Photo border width</p>
+                    <input type="range" name="photo-border-line-width" min="0" max="50" class="controls" value="0"
+                        data-sizing="px">
+                </div>
+
+                <div>
+                    <p>Photo border color</p>
+                    <input type="color" name="photo-border-color" class="controls" value="#000000">
+                </div>
             </div>
 
-            <div>
-                <p>Photo background color</p>
-                <input type="color" name="photo-bg-color" class="controls" value="#ffffff">
-            </div>
-
-            <div>
-                <p>Photo border color</p>
-                <input type="color" name="photo-border-color" class="controls" value="#000000">
-            </div>
-
-            <div>
-                <p>Photo border width</p>
-                <input type="range" name="photo-border-line-width" min="0" max="50" class="controls" value="0"
-                    data-sizing="px">
-            </div>
-
-            <div class="filters">
+            <div class="adjust-filter-options">
                 <div>
                     <p>Blur</p>
                     <input type="range" name="photo-filter-blur" min="0" max="25" class="controls" value="0"
@@ -97,7 +99,7 @@
                 <input type="color" name="photo-filter-drop-shadow-color" class="controls" value="#000000">
             </div>
 
-            <div class="text-controls-container">
+            <div class="add-text">
                 <button type="button" onclick="addText()">Add Text</button>
             </div>
         </div>
