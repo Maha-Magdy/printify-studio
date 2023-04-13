@@ -30,13 +30,13 @@ body {
   grid-template-columns: 25% 1fr;
   grid-template-rows: max-content 1fr;
   grid-template-areas:
-    "sidebar nav"
-    "sidebar main";
+    "sideNav nav"
+    "sideNav main";
   /* overflow: hidden; */
 }
 
-.sidebar {
-  grid-area: sidebar;
+.sideNav {
+  grid-area: sideNav;
 }
 
 nav {
@@ -114,16 +114,16 @@ main {
     grid-template-rows: max-content max-content 1fr;
     grid-template-areas:
       "nav"
-      "sidebar"
+      "sideNav"
       "main";
   }
 
-  .sidebar {
+  nav {
     grid-area: nav;
   }
 
-  nav {
-    grid-area: sidebar;
+  .sideNav {
+    grid-area: sideNav;
   }
 
   main {

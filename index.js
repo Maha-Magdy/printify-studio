@@ -4,7 +4,7 @@ const choosePhotoFileInput = document.querySelector(".choose-photo-file-input");
 const chosenPhoto = document.querySelector(".chosenPhoto");
 const choosePhotoContainer = document.querySelector(".choose-photo-container");
 const main = document.querySelector("main");
-const nav = document.querySelector("nav");
+const nav = document.querySelector(".navbar");
 const controls = document.querySelectorAll(".controls");
 const textControlsContainer = document.querySelector(".add-text");
 
