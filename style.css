@@ -37,9 +37,36 @@ body {
 
 .sideNav {
   grid-area: sideNav;
+  position: relative;
 }
 
-nav {
+.main-options {
+  list-style-type: none;
+}
+
+.main-options > li:hover,
+.main-options > li:active,
+.main-options > li:focus {
+  cursor: pointer;
+}
+
+/* need to change the logic here to be in the class and will assign it and removed by js */
+.main-options > li:hover .hidden {
+  width: 200px;
+}
+
+.hidden {
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  list-style-type: none;
+  transition: 0.3s;
+}
+
+nav.navbar {
   grid-area: nav;
 }
 
@@ -118,7 +145,7 @@ main {
       "main";
   }
 
-  nav {
+  nav.navbar {
     grid-area: nav;
   }
 
