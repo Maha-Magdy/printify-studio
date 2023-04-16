@@ -7,6 +7,7 @@ const main = document.querySelector("main");
 const nav = document.querySelector(".navbar");
 const controls = document.querySelectorAll(".controls");
 const textControlsContainer = document.querySelector(".add-text");
+const optionsGroup = document.querySelectorAll(".options-group");
 
 main.style.height = `calc(100vh - ${nav.clientHeight}px - 3em)`;
 
@@ -238,8 +239,18 @@ const createTextControl = () => {
 };
 
 const addText = () => {
-  console.log("Hi");
   textControlsContainer.append(createTextControl());
 };
+
+function optionsGroupClickHandler() {
+  optionsGroup.forEach((optionGroup) =>
+    optionGroup.classList.remove("options--visible")
+  );
+  this.classList.add("options--visible");
+}
+
+optionsGroup.forEach((optionGroup) =>
+  optionGroup.addEventListener("click", optionsGroupClickHandler)
+);
 
 reset();
