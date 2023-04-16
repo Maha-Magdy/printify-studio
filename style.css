@@ -38,10 +38,26 @@ body {
 .sideNav {
   grid-area: sideNav;
   position: relative;
+  background: #d3eaeb;
+  overflow: hidden;
 }
 
 .main-options {
   list-style-type: none;
+  padding-left: 0;
+}
+
+.options-name {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-weight: bold;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.options-name:hover {
+  background: #b8dedc;
 }
 
 .main-options > li:hover,
@@ -50,20 +66,26 @@ body {
   cursor: pointer;
 }
 
-/* need to change the logic here to be in the class and will assign it and removed by js */
-.main-options > li:hover .hidden {
-  width: 200px;
+.options--visible > .options-name {
+  background: #b8dedc;
 }
 
-.hidden {
-  width: 0;
-  height: 100%;
+.options--visible > .options {
+  transform: translateX(0);
+}
+
+.options {
+  width: calc(100% - 30px);
+  height: 100vh;
   position: absolute;
   top: 0;
-  right: 0;
+  left: 3.5em;
+  transition: 0.3s;
   overflow: hidden;
   list-style-type: none;
-  transition: 0.3s;
+  transform: translateX(100%);
+  padding-left: 0;
+  background: #b8dedc;
 }
 
 nav.navbar {
