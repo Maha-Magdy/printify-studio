@@ -75,9 +75,8 @@ const createHtmlElement = (tagName, attributes = {}) => {
 };
 
 const handleTextUpdate = (event, textName) => {
-  document.querySelector(`.text-${textName}`).style[event.target.name] = `${
-    event.target.value
-  }${event.target.dataset.sizing || ""}`;
+  document.querySelector(`.text-${textName}`).style[event.target.name] = `${event.target.value
+    }${event.target.dataset.sizing || ""}`;
 };
 
 const textEditingControl = (
@@ -241,6 +240,13 @@ const createTextControl = () => {
 const addText = () => {
   textControlsContainer.append(createTextControl());
 };
+
+function closeAllVisibleOptions(e) {
+  optionsGroup.forEach((optionGroup) =>
+    optionGroup.classList.remove("options--visible")
+  );
+  e.stopPropagation();
+}
 
 function optionsGroupClickHandler() {
   optionsGroup.forEach((optionGroup) =>

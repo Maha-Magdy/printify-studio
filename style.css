@@ -84,16 +84,34 @@ body {
   overflow: hidden;
   list-style-type: none;
   transform: translateX(100%);
-  padding-left: 0;
   background: #b8dedc;
+  padding: 1em 0;
+}
+
+.options > * {
+  padding: 0 1em;
 }
 
 .options > li:first-child,
 .options > div:first-child {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-weight: bold;
+  background: #42999b;
+  color: white;
+  padding: 0 1em;
+}
+
+.options > li:first-child > svg,
+.options > div:first-child > svg {
+  transform: rotate(0);
+  transition: all 0.25s ease;
+}
+
+.options > li:first-child > svg:hover,
+.options > div:first-child > svg:hover {
+  transform: rotate(90deg);
 }
 
 nav.navbar {
