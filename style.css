@@ -92,6 +92,10 @@ body {
   padding: 0 1em;
 }
 
+.options p {
+  margin: 0.5em 0;
+}
+
 .options > li:first-child,
 .options > div:first-child {
   display: flex;
@@ -181,6 +185,18 @@ main {
     )
     var(--photo-filter-invert) var(--photo-filter-opacity)
     var(--photo-filter-saturate) var(--photo-filter-sepia);
+}
+/* style for range input */
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
 }
 
 @media only screen and (max-width: 992px) {
