@@ -6,6 +6,9 @@ https://kovart.github.io/dashed-border-generator/
 Open-licensed SVG Vector and Icons
 https://www.svgrepo.com/
 
+Inspiring color palettes
+https://coolors.co/palettes/popular/#42999b
+
 https://codepen.io/jonambas/pen/AYgZXz
 
 <!-- Range Input -->
