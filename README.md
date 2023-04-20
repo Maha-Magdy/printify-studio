@@ -15,3 +15,7 @@ https://codepen.io/jonambas/pen/AYgZXz
 
 https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
 https://www.cssportal.com/style-input-range/
+
+<!-- Color Input -->
+
+https://codepen.io/leemartin/pen/ExPXRzx
