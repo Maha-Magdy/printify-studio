@@ -89,11 +89,12 @@ body {
 }
 
 .options > * {
-  padding: 0 1em;
+  padding: 0 2.25em 0 1em;
+  margin-bottom: 1.75em;
 }
 
 .options p {
-  margin: 0.5em 0;
+  font-weight: bold;
 }
 
 .options > li:first-child,
@@ -282,6 +283,40 @@ input[type="range"]::-ms-fill-upper {
 
 input[type="range"]:focus::-ms-fill-upper {
   background: #328e92;
+}
+
+/* style for color input */
+input[type="color"] {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  height: 3em;
+  width: 3em;
+  padding: 0;
+}
+
+:-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+::-webkit-color-swatch {
+  border: 0;
+  border-radius: 0;
+  border-color: transparent;
+}
+
+::-moz-color-swatch,
+::-moz-focus-inner {
+  border: 0;
+  border-color: transparent;
+}
+
+::-moz-focus-inner {
+  padding: 0;
 }
 
 @media only screen and (max-width: 992px) {
