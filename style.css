@@ -32,7 +32,7 @@ body {
   grid-template-areas:
     "sideNav nav"
     "sideNav main";
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .sideNav {
@@ -125,6 +125,8 @@ body {
 
 nav.navbar {
   grid-area: nav;
+  padding: 1.25em 1em 0;
+  background: #edf6f9;
 }
 
 main {
@@ -191,6 +193,17 @@ main {
     var(--photo-filter-invert) var(--photo-filter-opacity)
     var(--photo-filter-saturate) var(--photo-filter-sepia);
 }
+
+.basic-btn {
+  background-color: #42999b;
+  color: white;
+  border: unset;
+  padding: 1em 2em;
+  border-radius: 1.5em;
+  cursor: pointer;
+  min-width: 8em;
+}
+
 /* style for range input */
 input[type="range"] {
   -webkit-appearance: none;
