@@ -110,6 +110,7 @@ const createTextControl = () => {
   const container = document.createElement("div");
 
   const textInputAndRemoveBtnContainer = document.createElement("div");
+  textInputAndRemoveBtnContainer.classList.add('space-between-center-container');
 
   const textInput = createHtmlElement("input", {
     type: "text",
@@ -127,8 +128,8 @@ const createTextControl = () => {
   setAttributes(container, { class: `text-${textControlName}-controls` });
 
   const removeBtn = document.createElement("button");
-  removeBtn.appendChild(document.createTextNode("Remove"));
-  setAttributes(removeBtn, { type: "button", class: "removeBtn" });
+  removeBtn.appendChild(document.createTextNode("X"));
+  setAttributes(removeBtn, { type: "button", class: "basic-btn removeBtn" });
   removeBtn.addEventListener("click", () => removeTextHandler(textControlName));
 
   textInputAndRemoveBtnContainer.append(textInput, removeBtn);
