@@ -222,6 +222,28 @@ main {
   align-items: center;
 }
 
+.add-text > div > * {
+  margin-bottom: 1em;
+}
+
+.add-text > div label {
+  display: block;
+  margin-bottom: 1em;
+}
+
+.add-text input[type="text"],
+.add-text input[type="number"],
+.add-text select {
+  padding: 0.75em 1em;
+  border: 1.5px solid #42999b;
+  border-radius: 0.5em;
+}
+.add-text input[type="text"]:focus-visible,
+.add-text input[type="number"]:focus-visible,
+.add-text select:focus-visible {
+  outline: #42999b;
+}
+
 /* style for range input */
 input[type="range"] {
   -webkit-appearance: none;
