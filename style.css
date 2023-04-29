@@ -81,7 +81,7 @@ body {
   top: 0;
   left: 3.5em;
   transition: 0.3s;
-  overflow: hidden;
+  overflow: auto;
   list-style-type: none;
   transform: translateX(100%);
   background: #b8dedc;
@@ -222,6 +222,10 @@ main {
   align-items: center;
 }
 
+.add-text {
+  font-weight: bold;
+}
+
 .add-text > div > * {
   margin-bottom: 1em;
 }
@@ -238,6 +242,17 @@ main {
   border: 1.5px solid #42999b;
   border-radius: 0.5em;
 }
+
+.add-text input[type="text"],
+.add-text input[type="number"],
+.add-text select {
+  padding: 0.75em 1em;
+}
+
+.add-text select {
+  padding: 0.5em 0;
+}
+
 .add-text input[type="text"]:focus-visible,
 .add-text input[type="number"]:focus-visible,
 .add-text select:focus-visible {
@@ -370,6 +385,23 @@ input[type="color"] {
 
 ::-moz-focus-inner {
   padding: 0;
+}
+
+/* style for scroll */
+/* width */
+::-webkit-scrollbar {
+  width: 0.75em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #42999b;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 0.5em;
 }
 
 @media only screen and (max-width: 992px) {
