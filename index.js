@@ -18,6 +18,58 @@ const reset = () => {
   document.documentElement.style.setProperty("--photo-bg-color", "transparent");
   document.documentElement.style.setProperty("--photo-border-color", "#000000");
   document.documentElement.style.setProperty("--photo-border-line-width", "0");
+  document.documentElement.style.setProperty("--photo-filter-blur", "blur(0)");
+  document.documentElement.style.setProperty(
+    "--photo-filter-contrast",
+    "contrast(100%)"
+  );
+  document.documentElement.style.setProperty(
+    "--photo-filter-grayscale",
+    "grayscale(0)"
+  );
+  document.documentElement.style.setProperty(
+    "--photo-filter-hue-rotate",
+    "hue-rotate(0)"
+  );
+  document.documentElement.style.setProperty(
+    "--photo-filter-drop-shadow-offset-x",
+    "0"
+  );
+  document.documentElement.style.setProperty(
+    "--photo-filter-drop-shadow-offset-y",
+    "0"
+  );
+  document.documentElement.style.setProperty(
+    "--photo-filter-drop-shadow-blur-radius",
+    "0"
+  );
+  document.documentElement.style.setProperty(
+    "--photo-filter-drop-shadow-color",
+    "black"
+  );
+  document.documentElement.style.setProperty(
+    "--photo-filter-invert",
+    "invert(0)"
+  );
+  document.documentElement.style.setProperty(
+    "--photo-filter-opacity",
+    "opacity(100%)"
+  );
+  document.documentElement.style.setProperty(
+    "--photo-filter-saturate",
+    "saturate(100%)"
+  );
+  document.documentElement.style.setProperty(
+    "--photo-filter-sepia",
+    "sepia(0)"
+  );
+
+  textControlsContainer.innerHTML = "";
+  document
+    .querySelectorAll(".main-container > p")
+    .forEach((text) => text.remove());
+
+  controls.forEach((control) => (control.value = control.dataset.value));
 };
 
 const choosePhotoBtnHandler = () => {
@@ -57,7 +109,6 @@ function setAttributes(element, attributes) {
 }
 
 const textInputChangeHandler = (e) => {
-  console.log(e, e.target.name, e.target.value);
   const txtEle = document.querySelector(`.${e.target.name}`);
   const txt = document.createTextNode(e.target.value);
   txtEle.appendChild(txt);
@@ -75,8 +126,9 @@ const createHtmlElement = (tagName, attributes = {}) => {
 };
 
 const handleTextUpdate = (event, textName) => {
-  document.querySelector(`.text-${textName}`).style[event.target.name] = `${event.target.value
-    }${event.target.dataset.sizing || ""}`;
+  document.querySelector(`.text-${textName}`).style[event.target.name] = `${
+    event.target.value
+  }${event.target.dataset.sizing || ""}`;
 };
 
 const textEditingControl = (
@@ -110,7 +162,9 @@ const createTextControl = () => {
   const container = document.createElement("div");
 
   const textInputAndRemoveBtnContainer = document.createElement("div");
-  textInputAndRemoveBtnContainer.classList.add('space-between-center-container');
+  textInputAndRemoveBtnContainer.classList.add(
+    "space-between-center-container"
+  );
 
   const textInput = createHtmlElement("input", {
     type: "text",
