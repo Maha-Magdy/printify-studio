@@ -15,61 +15,24 @@ const reset = () => {
   chosenPhoto.style.display = "none";
   choosePhotoFileInput.value = null;
   choosePhotoContainer.style.display = "block";
+
+  controls.forEach((control) => {
+    control.value = control.dataset.value;
+    const suffix = control.dataset.sizing || "";
+    document.documentElement.style.setProperty(
+      `--${control.name}`,
+      control.dataset.filter
+        ? `${control.dataset.filter}(${control.dataset.value + suffix})`
+        : control.dataset.value + suffix
+    );
+  });
+
   document.documentElement.style.setProperty("--photo-bg-color", "transparent");
-  document.documentElement.style.setProperty("--photo-border-color", "#000000");
-  document.documentElement.style.setProperty("--photo-border-line-width", "0");
-  document.documentElement.style.setProperty("--photo-filter-blur", "blur(0)");
-  document.documentElement.style.setProperty(
-    "--photo-filter-contrast",
-    "contrast(100%)"
-  );
-  document.documentElement.style.setProperty(
-    "--photo-filter-grayscale",
-    "grayscale(0)"
-  );
-  document.documentElement.style.setProperty(
-    "--photo-filter-hue-rotate",
-    "hue-rotate(0)"
-  );
-  document.documentElement.style.setProperty(
-    "--photo-filter-drop-shadow-offset-x",
-    "0"
-  );
-  document.documentElement.style.setProperty(
-    "--photo-filter-drop-shadow-offset-y",
-    "0"
-  );
-  document.documentElement.style.setProperty(
-    "--photo-filter-drop-shadow-blur-radius",
-    "0"
-  );
-  document.documentElement.style.setProperty(
-    "--photo-filter-drop-shadow-color",
-    "black"
-  );
-  document.documentElement.style.setProperty(
-    "--photo-filter-invert",
-    "invert(0)"
-  );
-  document.documentElement.style.setProperty(
-    "--photo-filter-opacity",
-    "opacity(100%)"
-  );
-  document.documentElement.style.setProperty(
-    "--photo-filter-saturate",
-    "saturate(100%)"
-  );
-  document.documentElement.style.setProperty(
-    "--photo-filter-sepia",
-    "sepia(0)"
-  );
 
   textControlsContainer.innerHTML = "";
   document
     .querySelectorAll(".main-container > p")
     .forEach((text) => text.remove());
-
-  controls.forEach((control) => (control.value = control.dataset.value));
 };
 
 const choosePhotoBtnHandler = () => {
