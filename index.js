@@ -16,6 +16,8 @@ const reset = () => {
   choosePhotoFileInput.value = null;
   choosePhotoContainer.style.display = "block";
 
+  mainContainer.addEventListener("drop", dropHandler);
+
   controls.forEach((control) => {
     control.value = control.dataset.value;
     const suffix = control.dataset.sizing || "";
@@ -39,16 +41,20 @@ const choosePhotoBtnHandler = () => {
   choosePhotoFileInput.click();
 };
 
+const displayImage = (imageObj) => {
+  document.documentElement.style.setProperty("--photo-bg-color", "white");
+  choosePhotoContainer.style.display = "none";
+  const image = URL.createObjectURL(imageObj);
+  chosenPhoto.src = image;
+  chosenPhoto.onload = () => {
+    URL.revokeObjectURL(image);
+  };
+  chosenPhoto.style.display = "block";
+};
+
 const fileInputOnchangeHandler = () => {
   if (choosePhotoFileInput.files[0]) {
-    document.documentElement.style.setProperty("--photo-bg-color", "white");
-    choosePhotoContainer.style.display = "none";
-    const image = URL.createObjectURL(choosePhotoFileInput.files[0]);
-    chosenPhoto.src = image;
-    chosenPhoto.onload = () => {
-      URL.revokeObjectURL(image);
-    };
-    chosenPhoto.style.display = "block";
+    displayImage(choosePhotoFileInput.files[0]);
   }
 };
 
@@ -62,8 +68,27 @@ function handleUpdate() {
   );
 }
 
+function dropHandler(e) {
+  e.preventDefault();
+  const files = e.dataTransfer.files;
+  const images = [];
+  for (let i = 0; i < files.length; i++) {
+    if (!files[i].type.match("image")) continue;
+    images.push(files[i]);
+  }
+  if (images.length !== 0) {
+    displayImage(images[0]);
+  }
+
+  mainContainer.removeEventListener("drop", dropHandler);
+}
+
 controls.forEach((input) => input.addEventListener("change", handleUpdate));
 // controls.forEach((input) => input.addEventListener("mousemove", handleUpdate));
+
+mainContainer.addEventListener("dragover", (e) => {
+  e.preventDefault();
+});
 
 function setAttributes(element, attributes) {
   for (const key in attributes) {
