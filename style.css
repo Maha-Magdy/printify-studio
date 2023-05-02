@@ -127,13 +127,15 @@ nav.navbar {
   grid-area: nav;
   padding: 1.25em 1em 0;
   background: #edf6f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 main {
   grid-area: main;
   background-color: #edf6f9;
   padding: 1.5em;
-  position: relative;
 }
 
 .main-container {
@@ -150,7 +152,7 @@ main {
   padding: 2em 0;
 }
 
-.main-container input {
+.choose-photo-file-input {
   display: none;
 }
 
@@ -199,9 +201,14 @@ main {
   color: white;
   border: unset;
   padding: 1em 2em;
-  border-radius: 1.5em;
+  border-radius: 2em;
   cursor: pointer;
   min-width: 8em;
+  transition: all 0.25s;
+}
+
+.basic-btn:hover {
+  transform: translateY(-2px);
 }
 
 .add-text-btn-container {
@@ -424,5 +431,17 @@ input[type="color"] {
 
   main {
     grid-area: main;
+  }
+}
+
+@media print {
+  body {
+    visibility: hidden;
+  }
+  #printable-area {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 }
