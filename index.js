@@ -302,4 +302,8 @@ optionsGroup.forEach((optionGroup) =>
   optionGroup.addEventListener("click", optionsGroupClickHandler)
 );
 
+function imagePrintHandler() {
+  window.print();
+}
+
 reset();

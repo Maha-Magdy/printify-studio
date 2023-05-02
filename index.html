@@ -305,10 +305,13 @@
             </ul>
         </nav>
         <nav class="navbar">
-            <button class="clear-btn basic-btn" onclick="reset()">Clear</button>
+            <button class="basic-btn" onclick="reset()">Clear</button>
+            <div>
+                <button type="button" class="basic-btn" onclick="imagePrintHandler()">Print</button>
+            </div>
         </nav>
         <main>
-            <div class="main-container">
+            <div class="main-container" id="printable-area">
                 <input type="file" accept="image/*" class="choose-photo-file-input"
                     onchange="fileInputOnchangeHandler()">
                 <div class="choose-photo-container">
