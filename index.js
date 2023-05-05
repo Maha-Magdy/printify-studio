@@ -98,8 +98,7 @@ function setAttributes(element, attributes) {
 
 const textInputChangeHandler = (e) => {
   const txtEle = document.querySelector(`.${e.target.name}`);
-  const txt = document.createTextNode(e.target.value);
-  txtEle.appendChild(txt);
+  txtEle.textContent = e.target.value;
 };
 
 const removeTextHandler = (textName) => {
@@ -114,9 +113,8 @@ const createHtmlElement = (tagName, attributes = {}) => {
 };
 
 const handleTextUpdate = (event, textName) => {
-  document.querySelector(`.text-${textName}`).style[event.target.name] = `${
-    event.target.value
-  }${event.target.dataset.sizing || ""}`;
+  document.querySelector(`.text-${textName}`).style[event.target.name] = `${event.target.value
+    }${event.target.dataset.sizing || ""}`;
 };
 
 const textEditingControl = (
@@ -184,9 +182,9 @@ const createTextControl = () => {
         type: "range",
         name: "left",
         min: "0",
-        max: `${mainContainer.clientWidth}`,
+        max: `${100 - textEle.clientWidth}`,
         value: "0",
-        ["data-sizing"]: "px",
+        ["data-sizing"]: "%",
       },
     },
     textControlName
@@ -200,9 +198,9 @@ const createTextControl = () => {
         type: "range",
         name: "top",
         min: "0",
-        max: `${mainContainer.clientHeight}`,
+        max: `${100 - textEle.clientHeight}`,
         value: "0",
-        ["data-sizing"]: "px",
+        ["data-sizing"]: "%",
       },
     },
     textControlName
