@@ -2,6 +2,7 @@
 :root {
   --photo-bg-color: transparent;
   --photo-border-color: transparent;
+  --photo-border-radius: 0;
   --photo-border-line-width: 0;
   --photo-max-hight: 80%;
   --photo-filter-blur: blur(0);
@@ -182,7 +183,12 @@ main {
 .chosenPhoto {
   max-height: var(--photo-max-hight);
   max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   overflow: hidden;
+  border-radius: var(--photo-border-radius);
   border: var(--photo-border-line-width) solid var(--photo-border-color);
   filter: var(--photo-filter-blur) var(--photo-filter-contrast)
     var(--photo-filter-grayscale) var(--photo-filter-hue-rotate)
