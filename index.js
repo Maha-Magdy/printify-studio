@@ -8,6 +8,7 @@ const nav = document.querySelector(".navbar");
 const controls = document.querySelectorAll(".controls");
 const textControlsContainer = document.querySelector(".add-text");
 const optionsGroup = document.querySelectorAll(".options-group");
+let isEditAllow = false;
 
 main.style.height = `calc(100vh - ${nav.clientHeight}px - 3em)`;
 
@@ -35,6 +36,7 @@ const reset = () => {
   document
     .querySelectorAll(".main-container > p")
     .forEach((text) => text.remove());
+  isEditAllow = false;
 };
 
 const choosePhotoBtnHandler = () => {
@@ -50,6 +52,7 @@ const displayImage = (imageObj) => {
     URL.revokeObjectURL(image);
   };
   chosenPhoto.style.display = "block";
+  isEditAllow = true;
 };
 
 const fileInputOnchangeHandler = () => {
@@ -113,8 +116,9 @@ const createHtmlElement = (tagName, attributes = {}) => {
 };
 
 const handleTextUpdate = (event, textName) => {
-  document.querySelector(`.text-${textName}`).style[event.target.name] = `${event.target.value
-    }${event.target.dataset.sizing || ""}`;
+  document.querySelector(`.text-${textName}`).style[event.target.name] = `${
+    event.target.value
+  }${event.target.dataset.sizing || ""}`;
 };
 
 const textEditingControl = (
@@ -279,7 +283,9 @@ const createTextControl = () => {
 };
 
 const addText = () => {
-  textControlsContainer.append(createTextControl());
+  if (isEditAllow) {
+    textControlsContainer.append(createTextControl());
+  }
 };
 
 function closeAllVisibleOptions(e) {
