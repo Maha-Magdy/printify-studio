@@ -63,7 +63,7 @@ Feel free to check the [issues page](https://github.com/Maha-Magdy/printify-stud
 
 ## Acknowledgments
 
-- Customized dashed border from <a href="https://kovart.github.io/dashed-border-generator/">A cool tool made by @kovart called the dashed border generator, to allow setting the stroke dash array you desire.</a>
+- Customized dashed border from <a href="https://kovart.github.io/dashed-border-generator/">Dashed Border Generator</a> A cool tool made by @kovart, to allow setting the stroke dash array you desire.
 - SVG Vectors and Icons from <a href="https://www.svgrepo.com/">SVG Repo</a>
 - Inspiring color palettes from <a href="https://coolors.co/palettes/popular">Coolors</a>
 
