@@ -29,7 +29,7 @@ Printify Studio is a web-based application that allows users to upload or drag a
 
 ## Getting Started 
 
-To get started with Printify Studio, simply open the app in your web browser and upload or drag and drop a photo onto the canvas. From there, you can use the range of customization tools to adjust your image until it's just right. Once you're happy with your image, you can print it right from the app.
+To get started with Printify Studio, simply open the app in your web browser and upload or drag and drop a photo onto the canvas. From there, you can use the range of customization tools to adjust your image until it's just right. Once you're happy with your image, you can print it right from the application.
 
 <a name="demo"></a>
 
