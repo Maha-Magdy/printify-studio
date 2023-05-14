@@ -40,7 +40,7 @@ Here are the links to the live demo and the video demo of the Printify Studio:
 - [Live Demo Link](https://maha-magdy.github.io/printify-studio/)
 - Video Demo Link
 
-https://github.com/Maha-Magdy/printify-studio/assets/62838415/da3c2589-1f53-420f-8d7c-a4c52001a106
+https://github.com/Maha-Magdy/printify-studio/assets/62838415/2f4b7ea9-9823-482b-9c2a-65bf7b5fb5f3
 
 <a name="installation"></a>
 
