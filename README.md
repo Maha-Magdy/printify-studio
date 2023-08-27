@@ -48,8 +48,8 @@ https://github.com/Maha-Magdy/printify-studio/assets/62838415/2f4b7ea9-9823-482b
 
 To install the Printify Studio on your local machine, follow these steps:
 
-Clone this repository: `git clone https://github.com/Maha-Magdy/printify-studio.git`
-Open the `index.html` file in your web browser
+- Clone this repository: `git clone https://github.com/Maha-Magdy/printify-studio.git`
+- Open the `index.html` file in your web browser
 
 <a name="contributing"></a>
 
